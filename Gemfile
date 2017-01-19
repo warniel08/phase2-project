@@ -22,6 +22,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'httparty'
   gem 'factory_girl'
   gem 'faker'
 end
