@@ -11,9 +11,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <title></title>
+  <title>Blerhg</title>
 </head>
 <body>
+  <% @user = User.find(session[:user_id]) if session[:user_id] %>
+  <div class="">
+    <div class="">
+      <ul class="no-bullets no-margin no-padding right">
+        <%= username_nav_display(@user) if @user %>
+        <%= home_link %>
+        <%= register_link unless @user %>
+        <%= login_link unless @user %>
+        <%= logout_link if @user %>
+      </ul>
+    </div>
+
+    <div class="">
+      <img class="" src="">
+      <h1>Blerhg Blog</h1>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>
