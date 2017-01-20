@@ -19,7 +19,9 @@ class Post < ActiveRecord::Base
     data = JSON.parse(response.body)
     location = data['location']['city']
     temp_f = data['current_observation']['temp_f']
+    p data
     p "Current temperature in #{location} is: #{temp_f}"
+    return temp_f
 
     # open(url) do |f|
     #   json_string = f.read

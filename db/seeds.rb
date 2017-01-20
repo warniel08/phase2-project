@@ -1,0 +1,1 @@
+Post.weather_man
