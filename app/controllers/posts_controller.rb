@@ -3,8 +3,10 @@ get '/posts' do
   @posts = Post.most_recent
   if session[:user_id]
     @user = User.find(session[:user_id])
+    erb :'posts/index'
+  else
+    erb :'posts/index'
   end
-  erb :'posts/index'
 end
 
 post '/posts' do

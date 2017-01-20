@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>hello <%= @user.username if @user %></h2>
+  <h3>check out some posts</h3>
+  <h3>....<em>click</em> on one for an adventure</h3>
+
+  <div class="col-md-6">
+    <% @posts.each do |post| %>
+    <hr>
+    <h4><a href="/posts/<%= post.id %>"><%= post.title %></a></h4>
+    <p>created on: <small><%= post.created_at.strftime("%F") %></small></p>
+    <% end %>
+    <hr>
+    <a class="btn btn-success" href="/posts/new">add a new post</a>
+  </div>
+
+  <div class="col-md-6">
+    <!-- i want to display the weather right here -->
+  </div>
+</div>

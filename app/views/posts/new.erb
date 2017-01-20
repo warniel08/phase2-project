@@ -1,0 +1,15 @@
+<div class="container">
+  <form method="post" action="/posts">
+    <div class="">
+      <label for="post-title" class="">title:</label><br>
+      <input id="post-title" name="post[title]" type="text" value="<%= @post.title if @post %>" class="">
+    </div>
+
+    <div class="">
+      <label for="post-body" class="">enter some thoughts:</label><br>
+      <textarea id="post-body" name="post[body]" type="textarea" rows="5" cols="45" value="<%= @post.body if @post %>" class=""></textarea>
+    </div>
+
+    <input class="btn btn-success" type="submit" value="add new post">
+  </form>
+</div>
