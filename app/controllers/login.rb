@@ -13,7 +13,7 @@ post '/login' do
     redirect '/login'
   else
     session[:user_id] = user.id
-    redirect '/entries'
+    redirect '/posts'
   end
 end
 

@@ -15,9 +15,9 @@
 </head>
 <body>
   <% @user = User.find(session[:user_id]) if session[:user_id] %>
-  <div class="">
+  <div class="container">
     <div class="">
-      <ul class="no-bullets no-margin no-padding right">
+      <ul class="list-unstyled">
         <%= username_nav_display(@user) if @user %>
         <%= home_link %>
         <%= register_link unless @user %>
