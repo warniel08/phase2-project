@@ -15,7 +15,7 @@ class Weather < ActiveRecord::Base
     p "Current temperature in #{location} is: #{temp_f}"
     # return temp_f
 
-    @weather = Weather.find_or_create_by(temperature: temp_f, weather_img: data['icon'])
+    @weather = Weather.find_or_create_by(temperature: temp_f, weather_img: data['icon_url'])
 
     # open(url) do |f|
     #   json_string = f.read

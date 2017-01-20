@@ -1,5 +1,6 @@
 # route handlers dealing with the collection
 get '/posts' do
+  @weather = Weather.all
   @posts = Post.most_recent
   if session[:user_id]
     @user = User.find(session[:user_id])
