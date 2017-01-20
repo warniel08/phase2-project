@@ -1,4 +1,4 @@
-module NavigationLinkHelper
+helpers do
   def home_link
     <<-HTML
       <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
@@ -29,5 +29,3 @@ module NavigationLinkHelper
     HTML
   end
 end
-
-helpers NavigationLinkHelper
