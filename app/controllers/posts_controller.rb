@@ -9,6 +9,14 @@ get '/posts' do
   end
 end
 
+get '/posts/new' do
+  if session[:user_id]
+    erb :'posts/new'
+  else
+    erb :'404'
+  end
+end
+
 post '/posts' do
   return erb :'404' unless session[:user_id]
   @post = Post.new(params[:post])
@@ -19,14 +27,6 @@ post '/posts' do
   else
     @errors = @post.errors.full_messages
     erb :'posts/new'
-  end
-end
-
-get '/posts/new' do
-  if session[:user_id]
-    erb :'posts/new'
-  else
-    erb :'404'
   end
 end
 
