@@ -1,1 +1,1 @@
-Post.weather_man
+Weather.weather_man
