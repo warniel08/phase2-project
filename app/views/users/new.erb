@@ -1,25 +1,27 @@
-<h2>Please register to use this awesome blog that will change your life forever</h2>
+<div class="container">
+  <h2>Please register to use this awesome blog that will change your life forever</h2>
 
-<% if @errors %>
-  <div class="errors-wrapper">
-    <span>Please ReBrocc:</span>
-    <ul class="errors">
-      <% @errors.each do |error| %>
-        <li class="error"><%= error %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if @errors %>
+    <div class="errors-wrapper">
+      <span>please try again:</span>
+      <ul class="errors">
+        <% @errors.each do |error| %>
+          <li class="error"><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<form method="post" action="/users">
-  <label for="username-input" class="">username:</label>
-  <input id="username-input" name="user[username]" type="text" value="<%= @user.username if @user %>" class="">
+  <form method="post" action="/users">
+    <label for="username-input" class="">username:</label>
+    <input id="username-input" name="user[username]" type="text" value="<%= @user.username if @user %>" class="">
 
-  <label for="email-input" class="">email:</label>
-  <input id="email-input" name="user[email]" type="text" value="<%= @user.email if @user %>" class="">
+    <label for="email-input" class="">email:</label>
+    <input id="email-input" name="user[email]" type="text" value="<%= @user.email if @user %>" class="">
 
-  <label for="password-input" class="">password:</label>
-  <input id="password-input" name="user[password]" type="password" class="">
+    <label for="password-input" class="">password:</label>
+    <input id="password-input" name="user[password]" type="password" class="">
 
-  <input type="submit" value="sign me up" class="btn btn-danger">
-</form>
+    <input type="submit" value="sign me up" class="btn btn-danger">
+  </form>
+</div>

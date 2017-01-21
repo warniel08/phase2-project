@@ -1,11 +1,20 @@
 # route handlers dealing with the collection
 get '/posts' do
+  @weather = Weather.first
   @posts = Post.most_recent
   if session[:user_id]
     @user = User.find(session[:user_id])
     erb :'posts/index'
   else
     erb :'posts/index'
+  end
+end
+
+get '/posts/new' do
+  if session[:user_id]
+    erb :'posts/new'
+  else
+    erb :'404'
   end
 end
 
@@ -19,14 +28,6 @@ post '/posts' do
   else
     @errors = @post.errors.full_messages
     erb :'posts/new'
-  end
-end
-
-get '/posts/new' do
-  if session[:user_id]
-    erb :'posts/new'
-  else
-    erb :'404'
   end
 end
 
