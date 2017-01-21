@@ -1,7 +1,10 @@
 <div class="container">
-  <h2>hello <%= @user.username if @user %></h2>
+  <% if @user %>
+    <h5>hello, <strong><%= @user.username %></strong></h5>
+  <% else %>
+    <h5>hello</h5>
+  <% end %>
   <h3>check out some posts</h3>
-  <h3>....<em>click</em> on one for an adventure</h3>
 
   <div class="col-md-6">
     <% @posts.each do |post| %>
@@ -14,7 +17,10 @@
   </div>
 
   <div class="col-md-6">
-    <%= @weather.temperature %>
-    <img src="<%= @weather.weather_img %>" height="200" width="200" alt="weather-img">
+    <hr>
+    <h5>Current temperature of Seattle, WA</h5>
+    <img src="<%= @weather.weather_img %>" height="100" width="100" alt="weather-img">
+    <p>current temperature: <%= @weather.temperature %></p>
+    <hr>
   </div>
 </div>
