@@ -13,7 +13,6 @@ end
 get '/posts/new' do
   if session[:user_id]
     erb :'posts/new'
-    Weather.weather_man
   else
     erb :'404'
   end
@@ -25,6 +24,7 @@ post '/posts' do
   @post.user_id = session[:user_id]
 
   if @post.save
+    Weather.weather_man
     redirect "/posts/#{@post.id}"
   else
     @errors = @post.errors.full_messages
