@@ -13,6 +13,7 @@ end
 get '/posts/new' do
   if session[:user_id]
     erb :'posts/new'
+    Weather.weather_man
   else
     erb :'404'
   end
